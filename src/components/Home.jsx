@@ -1,66 +1,93 @@
+import "./Home.css";
+
 function Home() {
   return (
-    <div
-      style={{
-        height: "60vh",
-        background: "#f8fafc",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "48px",
-          fontWeight: "700",
-          color: "#0f172a",
-        }}
-      >
-        Find Your Dream Job 🚀
-      </h1>
+    <section className="hero-section">
 
-      <p style={{ margin: "10px 0", color: "#64748b" }}>
-        Explore thousands of job opportunities
-      </p>
+      <div className="container hero-container">
 
-      <input
-        type="text"
-        placeholder="Search jobs..."
-        style={{
-          padding: "12px",
-          width: "320px",
-          marginTop: "10px",
-          borderRadius: "6px",
-          border: "1px solid #e2e8f0",
-          background: "#ffffff",
-          outline: "none",
-        }}
-      />
+        {/* LEFT CONTENT */}
+        <div className="hero-content">
 
-      <button
-        style={{
-          marginTop: "15px",
-          padding: "10px 20px",
-          background: "#4f46e5",
-          color: "white",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer",
-          fontWeight: "500",
-          transition: "0.3s",
-        }}
-        onMouseEnter={(e) =>
-          (e.target.style.background = "#4338ca")
-        }
-        onMouseLeave={(e) =>
-          (e.target.style.background = "#4f46e5")
-        }
-      >
-        Search
-      </button>
-    </div>
+          <span className="hero-badge">
+            #1 Smart Career Platform
+          </span>
+
+          <h1>
+            Find Your Dream Job &
+            Build Your Future
+          </h1>
+
+          <p>
+            Discover thousands of opportunities from top companies,
+            startups, and global recruiters — all in one place.
+          </p>
+
+          {/* SEARCH BOX */}
+          <div className="hero-search">
+
+            <input
+              type="text"
+              placeholder="Search jobs, companies, skills..."
+            />
+
+            <button>
+              Search Jobs
+            </button>
+
+          </div>
+
+          {/* STATS */}
+          <div className="hero-stats">
+
+            <div>
+              <h3>10K+</h3>
+              <span>Active Jobs</span>
+            </div>
+
+            <div>
+              <h3>500+</h3>
+              <span>Companies</span>
+            </div>
+
+            <div>
+              <h3>15K+</h3>
+              <span>Candidates</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE CARD */}
+        <div className="hero-image">
+
+          <div className="hero-card">
+
+            <h3>UI/UX Designer</h3>
+
+            <p>Google • Remote</p>
+
+            <div className="tags">
+              <span>Full Time</span>
+              <span>$120k</span>
+            </div>
+
+            <button className="apply-btn">
+              Apply Now
+            </button>
+
+          </div>
+
+          <div className="floating-card">
+            <p>🔥 1200+ New Jobs Added Today</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
   );
 }
 

@@ -1,34 +1,37 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
-  const linkStyle = {
-    margin: "0 12px",
-    color: "#0f172a",
-    fontWeight: "500",
-    textDecoration: "none",
-  };
-
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "15px 40px",
-        backgroundColor: "#ffffff",
-        borderBottom: "1px solid #e2e8f0",
-      }}
-    >
-      <h2 style={{ color: "#4f46e5", cursor: "pointer" }}>
-        JobPortal
-      </h2>
+    <header className="navbar">
+      <div className="container nav-container">
 
-      <div>
-        <Link to="/" style={linkStyle}>Home</Link>
-        <Link to="/jobs" style={linkStyle}>Jobs</Link>
-        <Link to="/login" style={linkStyle}>Login</Link>
+        {/* Logo */}
+        <Link to="/" className="logo">
+          Career<span>Connect</span>
+        </Link>
+
+        {/* Navigation Links */}
+        <nav className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/jobs">Find Jobs</Link>
+          <Link to="/">Companies</Link>
+          <Link to="/">Services</Link>
+        </nav>
+
+        {/* Right Buttons */}
+        <div className="nav-actions">
+          <Link to="/login" className="login-btn">
+            Login
+          </Link>
+
+          <button className="primary-btn">
+            Post a Job
+          </button>
+        </div>
+
       </div>
-    </nav>
+    </header>
   );
 }
 
