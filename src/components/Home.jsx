@@ -1,6 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
+
+  const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (search.trim() !== "") {
+      navigate(`/jobs?search=${search}`);
+    } else {
+      navigate("/jobs");
+    }
+  };
+
   return (
     <section className="hero-section">
 
@@ -29,9 +44,11 @@ function Home() {
             <input
               type="text"
               placeholder="Search jobs, companies, skills..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
 
-            <button>
+            <button onClick={handleSearch}>
               Search Jobs
             </button>
 

@@ -1,33 +1,102 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="navbar">
-      <div className="container nav-container">
+      <div className="nav-container">
 
         {/* Logo */}
-        <Link to="/" className="logo">
+        <Link
+          to="/"
+          className="logo"
+          onClick={() => setMenuOpen(false)}
+        >
           Career<span>Connect</span>
         </Link>
 
-        {/* Navigation Links */}
-        <nav className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/jobs">Find Jobs</Link>
-          <Link to="/">Companies</Link>
-          <Link to="/">Services</Link>
-        </nav>
+        {/* Search Bar */}
+        
 
-        {/* Right Buttons */}
-        <div className="nav-actions">
-          <Link to="/login" className="login-btn">
+       
+
+        {/* Hamburger */}
+        <div
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
+
+        {/* Navigation */}
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/jobs"
+            onClick={() => setMenuOpen(false)}
+          >
+            Find Jobs
+          </Link>
+
+          <Link
+            to="/companies"
+            onClick={() => setMenuOpen(false)}
+          >
+            Companies
+          </Link>
+
+          <Link
+            to="/services"
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
+          </Link>
+
+          {/* Mobile Only Links */}
+         { /*<Link
+            to="/login"
+            className="mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
             Login
           </Link>
 
-          <button className="primary-btn">
+          <Link
+            to="/post-job"
+            className="mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
             Post a Job
-          </button>
+          </Link>*/}
+
+        </nav>
+
+        {/* Desktop Actions */}
+        <div className="nav-actions">
+
+          <Link
+            to="/login"
+            className="login-btn"
+          >
+            Login
+          </Link>
+
+          <Link to="/post-job">
+            <button className="post-btn">
+              Post a Job
+            </button>
+          </Link>
+
         </div>
 
       </div>

@@ -3,18 +3,29 @@ export const jobs = [
     id: 1,
     title: "Frontend Developer",
     company: "Google",
-    desc: "Build UI using React and modern web technologies.",
+    location: "Remote",
+    type: "Full Time",
+    salary: "₹12-20 LPA",
+    desc: "React + UI development role",
   },
+
   {
     id: 2,
     title: "Backend Developer",
     company: "Amazon",
-    desc: "Work with APIs, databases, and Spring Boot services.",
+    location: "Bangalore",
+    type: "Full Time",
+    salary: "₹15-25 LPA",
+    desc: "Spring Boot + APIs development role",
   },
+
   {
     id: 3,
     title: "Full Stack Developer",
     company: "Microsoft",
-    desc: "Handle both frontend and backend development.",
+    location: "Hyderabad",
+    type: "Internship",
+    salary: "₹30k/month",
+    desc: "Frontend + Backend full stack role",
   },
 ];

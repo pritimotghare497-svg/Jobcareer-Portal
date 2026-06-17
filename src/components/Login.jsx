@@ -1,55 +1,110 @@
+import { useState } from "react";
+import "./Login.css";
+
 function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    <div
-      style={{
-        height: "70vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        background: "#f8fafc",
-      }}
-    >
-      <h2 style={{ marginBottom: "20px", color: "#0f172a" }}>
-        Login Page
-      </h2>
+    <div className="login-page">
 
-      <input
-        type="text"
-        placeholder="Enter email"
-        style={{
-          padding: "10px",
-          width: "250px",
-          marginBottom: "10px",
-          borderRadius: "6px",
-          border: "1px solid #e2e8f0",
-        }}
-      />
+      <div className="login-container">
 
-      <input
-        type="password"
-        placeholder="Enter password"
-        style={{
-          padding: "10px",
-          width: "250px",
-          marginBottom: "15px",
-          borderRadius: "6px",
-          border: "1px solid #e2e8f0",
-        }}
-      />
+        {/* LEFT SIDE */}
+        <div className="login-left">
 
-      <button
-        style={{
-          padding: "10px 20px",
-          background: "#4f46e5",
-          color: "white",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer",
-        }}
-      >
-        Login
-      </button>
+          <h1>
+            Welcome Back 👋
+          </h1>
+
+          <p>
+            Login to explore thousands of jobs,
+            internships, and career opportunities.
+          </p>
+
+          <div className="login-features">
+
+            <div className="feature-card">
+              🚀 Apply to top companies
+            </div>
+
+            <div className="feature-card">
+              💼 Discover remote opportunities
+            </div>
+
+            <div className="feature-card">
+              🔥 Build your professional career
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="login-card">
+
+          <h2>Login Account</h2>
+
+          <p className="login-subtitle">
+            Enter your credentials to continue
+          </p>
+
+          <form>
+
+            <div className="login-group">
+              <label>Email Address</label>
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div className="login-group">
+              <label>Password</label>
+
+              <div className="password-box">
+
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
+                />
+
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? "🙈" : "👁"}
+                </span>
+
+              </div>
+            </div>
+
+            <div className="login-options">
+
+              <label className="remember">
+                <input type="checkbox" />
+                Remember me
+              </label>
+
+              <a href="/">
+                Forgot Password?
+              </a>
+
+            </div>
+
+            <button className="login-btn">
+              Login
+            </button>
+
+            <button className="create-btn">
+              Create New Account
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
