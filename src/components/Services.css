@@ -1,0 +1,275 @@
+/* =========================
+   SERVICES PAGE
+========================= */
+
+.services-page {
+  padding-top: 110px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.services-hero {
+  text-align: center;
+  padding: 40px 20px 60px;
+}
+
+.services-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.services-hero h1 {
+  font-size: 3rem;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.services-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.services-stats {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 20px 70px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.stat-card h2 {
+  color: #2563eb;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #6b7280;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 80px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(37,99,235,0.12);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.service-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+  color: #111827;
+}
+
+.steps {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.step {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.step span {
+  width: 60px;
+  height: 60px;
+
+  margin: auto auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.step h4 {
+  color: #111827;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.services-cta {
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color: white;
+
+  padding: 80px 20px;
+  margin-top: 40px;
+}
+
+.services-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.services-cta p {
+  max-width: 650px;
+  margin: auto auto 30px;
+  opacity: 0.95;
+}
+
+.cta-btn {
+  background: white;
+  color: #2563eb;
+
+  border: none;
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .services-grid,
+  .steps,
+  .services-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta h2 {
+    font-size: 2rem;
+  }
+}
