@@ -3,8 +3,28 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
-
   const [search, setSearch] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(true);
+
+  const suggestions = [
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "React Developer",
+    "Java Developer",
+    "Spring Boot Developer",
+    "UI/UX Designer",
+    "Data Analyst",
+    "Cloud Engineer",
+    "DevOps Engineer",
+  ];
+
+  const filteredSuggestions =
+    search.length >= 2
+      ? suggestions.filter((item) =>
+          item.toLowerCase().includes(search.toLowerCase())
+        )
+      : [];
 
   const navigate = useNavigate();
 
@@ -18,7 +38,6 @@ function Home() {
 
   return (
     <section className="hero-section">
-
       <div className="container hero-container">
 
         {/* LEFT CONTENT */}
@@ -39,18 +58,49 @@ function Home() {
           </p>
 
           {/* SEARCH BOX */}
-          <div className="hero-search">
+          <div className="hero-search-wrapper">
 
-            <input
-              type="text"
-              placeholder="Search jobs, companies, skills..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            <div className="hero-search">
 
-            <button onClick={handleSearch}>
-              Search Jobs
-            </button>
+              <input
+                type="text"
+                placeholder="Search jobs, companies, skills..."
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setShowSuggestions(true);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
+              />
+
+              <button onClick={handleSearch}>
+                Search Jobs
+              </button>
+
+            </div>
+
+            {showSuggestions && filteredSuggestions.length > 0 && (
+              <div className="search-suggestions">
+
+                {filteredSuggestions.map((item, index) => (
+                  <div
+                    key={index}
+                    className="suggestion-item"
+                    onClick={() => {
+                      setSearch(item);
+                      setShowSuggestions(false);
+                    }}
+                  >
+                    🔍 {item}
+                  </div>
+                ))}
+
+              </div>
+            )}
 
           </div>
 
@@ -76,7 +126,7 @@ function Home() {
 
         </div>
 
-        {/* RIGHT SIDE CARD */}
+        {/* RIGHT SIDE */}
         <div className="hero-image">
 
           <div className="hero-card">
@@ -103,7 +153,6 @@ function Home() {
         </div>
 
       </div>
-
     </section>
   );
 }

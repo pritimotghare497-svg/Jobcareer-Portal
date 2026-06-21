@@ -18,11 +18,6 @@ function Navbar() {
           Career<span>Connect</span>
         </Link>
 
-        {/* Search Bar */}
-        
-
-       
-
         {/* Hamburger */}
         <div
           className="hamburger"
@@ -63,7 +58,7 @@ function Navbar() {
           </Link>
 
           {/* Mobile Only Links */}
-         { /*<Link
+          <Link
             to="/login"
             className="mobile-link"
             onClick={() => setMenuOpen(false)}
@@ -77,7 +72,7 @@ function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             Post a Job
-          </Link>*/}
+          </Link>
 
         </nav>
 

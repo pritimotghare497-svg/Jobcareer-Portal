@@ -1,24 +1,44 @@
+import { useState } from "react";
 import "./PostJob.css";
 
 function PostJob() {
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setSuccess(true);
+
+    e.target.reset();
+
+    setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+  };
+
   return (
     <div className="postjob-page">
-
       <div className="postjob-container">
-
         <h1>Post a New Job 🚀</h1>
 
         <p>
-          Reach thousands of talented candidates and hire the best people for your company.
+          Reach thousands of talented candidates and hire the best people for
+          your company.
         </p>
 
-        <form className="job-form">
+        {success && (
+          <div className="success-msg">
+            ✅ Job Posted Successfully!
+          </div>
+        )}
 
+        <form className="job-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Job Title</label>
             <input
               type="text"
               placeholder="Frontend Developer"
+              required
             />
           </div>
 
@@ -27,6 +47,7 @@ function PostJob() {
             <input
               type="text"
               placeholder="Google"
+              required
             />
           </div>
 
@@ -35,12 +56,14 @@ function PostJob() {
             <input
               type="text"
               placeholder="Bangalore"
+              required
             />
           </div>
 
           <div className="form-group">
             <label>Job Type</label>
-            <select>
+            <select required>
+              <option value="">Select Job Type</option>
               <option>Full Time</option>
               <option>Part Time</option>
               <option>Internship</option>
@@ -53,6 +76,7 @@ function PostJob() {
             <input
               type="text"
               placeholder="₹10-15 LPA"
+              required
             />
           </div>
 
@@ -61,20 +85,19 @@ function PostJob() {
             <textarea
               rows="5"
               placeholder="Describe the role and requirements..."
+              required
             ></textarea>
           </div>
 
           <button
-            type="submit"
-            className="submit-btn"
-          >
-            Post Job
-          </button>
-
+  type="button"
+  className="submit-btn"
+  onClick={() => alert("job posted succesfully")}
+>
+  Post Job
+</button>
         </form>
-
       </div>
-
     </div>
   );
 }
